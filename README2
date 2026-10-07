@@ -1,0 +1,173 @@
+# Análisis de Clientes y Uso de Servicios - ConectaTel
+
+## 📌 Objetivo del Proyecto
+
+Analizar el comportamiento de los usuarios de ConectaTel a partir de su actividad de llamadas y mensajes, con el fin de:
+
+- Identificar problemas de calidad en los datos.
+- Realizar limpieza y preparación de la información.
+- Analizar patrones de uso de los clientes.
+- Detectar valores atípicos (outliers).
+- Segmentar usuarios por nivel de uso y edad.
+- Generar insights y recomendaciones para la toma de decisiones de negocio.
+
+---
+
+## 📂 Datasets Utilizados
+
+### plans.csv
+Contiene información de los planes disponibles para los clientes:
+
+- plan
+- minutes_included
+- messages_included
+- monthly_fee
+
+### users_latam.csv
+Contiene información demográfica y de suscripción de los usuarios:
+
+- user_id
+- age
+- city
+- plan
+- reg_date
+- churn_date
+
+### usage.csv
+Contiene los registros de actividad de los usuarios:
+
+- id
+- user_id
+- type (call/text)
+- date
+- duration
+- length
+
+---
+
+## 🔍 Etapas del Análisis
+
+### 1. Carga y exploración de datos
+- Importación de librerías.
+- Carga de datasets.
+- Revisión de estructura y tipos de datos.
+
+### 2. Calidad de datos
+- Identificación de valores nulos.
+- Detección de valores inválidos o sentinels.
+- Validación de fechas fuera de rango.
+
+### 3. Limpieza de datos
+- Reemplazo de edades inválidas (-999).
+- Estandarización de valores faltantes.
+- Tratamiento de fechas inconsistentes.
+- Conversión de columnas a formato fecha.
+
+### 4. Creación de métricas por usuario
+- Cantidad de mensajes.
+- Cantidad de llamadas.
+- Total de minutos consumidos.
+- Creación del dataset consolidado `user_profile`.
+
+### 5. Análisis exploratorio
+- Estadísticas descriptivas.
+- Distribuciones de variables.
+- Histogramas.
+- Comparación de segmentos.
+
+### 6. Detección de outliers
+- Visualización mediante boxplots.
+- Aplicación del método IQR.
+- Evaluación del impacto de valores extremos.
+
+### 7. Segmentación de clientes
+#### Por nivel de uso
+- Bajo uso
+- Uso medio
+- Alto uso
+
+#### Por edad
+- Joven
+- Adulto
+- Adulto Mayor
+
+### 8. Insights ejecutivos
+- Hallazgos clave.
+- Oportunidades comerciales.
+- Recomendaciones para el negocio.
+
+---
+
+## ▶️ Cómo ejecutar el proyecto
+
+### Opción 1: Google Colab
+
+1. Abrir el archivo `.ipynb` en Google Colab.
+2. Cargar los datasets requeridos.
+3. Ejecutar las celdas en orden de arriba hacia abajo.
+4. Revisar los resultados, visualizaciones y conclusiones.
+
+### Opción 2: Jupyter Notebook
+
+1. Instalar Python 3.x.
+2. Instalar las librerías necesarias:
+
+```bash
+pip install pandas numpy matplotlib seaborn
+```
+
+3. Abrir el notebook:
+
+```bash
+jupyter notebook
+```
+
+4. Ejecutar todas las celdas en orden.
+
+---
+
+## 🔄 Guía de Reproducción
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/izaakrznine1/analysis-everpeak
+```
+
+2. Acceder al directorio del proyecto:
+
+```bash
+cd analysis-everpeak
+```
+
+3. Verificar que los archivos:
+   - plans.csv
+   - users_latam.csv
+   - usage.csv
+
+   se encuentren en la carpeta correspondiente.
+
+4. Abrir el notebook principal.
+
+5. Ejecutar todas las celdas para reproducir:
+   - Limpieza de datos
+   - Análisis exploratorio
+   - Segmentación de clientes
+   - Insights ejecutivos
+
+---
+
+## 📈 Principales Hallazgos
+
+- Se identificaron y corrigieron valores inválidos, datos faltantes y fechas fuera de rango.
+- Los usuarios presentan distintos niveles de consumo, permitiendo segmentarlos según su uso.
+- Los usuarios de alto consumo representan una oportunidad importante para estrategias de retención y upselling.
+- La segmentación por edad y uso facilita la personalización de ofertas comerciales.
+
+---
+
+## 👤 Autor
+
+Isaac Ramírez Ramos
+
+Proyecto desarrollado como parte del programa de Data Analytics de TripleTen.
